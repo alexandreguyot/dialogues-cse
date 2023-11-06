@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body p {
+  margin: 0;
+} 
+body h1,
+body h2,
+body h4 {
+  font-family: 'DM Serif Display', serif;
+}
+body h3,
+body p,
+body span,
+body a {
+  font-family: 'Space Grotesk', sans-serif;
+}
+body h1 {
+  font-size: 70px;
+  line-height: 70px;
+}
+body h2 {
+  font-size: 60px;
+  line-height: 60px;
+}
+body .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 18px;
+}
+body .btn.purple {
+  background: #9E8AF6;
+  color: #FFF0E6;
+}
+body .btn.green {
+  background: #1CF9B5;
+  color: #41463D;
+}
+body main header {
+  background: #41463D;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #FFF0E6;
+  padding: 20px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+body main header img {
+  width: 200px;
+}
+body main div.content {
+  max-width: 1470px;
+  margin: auto;
+  position: relative;
+}
+body main div.content div.hero {
+  width: 50%;
+  padding: 40px 0;
+}
+body main div.content div.hero h1,
+body main div.content div.hero p {
+  margin: 0 0 20px;
+}
+body main div.content div.hero p {
+  font-size: 26px;
+}
+body main div.content div.cards-container {
+  display: flex;
+  margin: 0 0 50px;
+}
+body main div.content div.cards-container div.card {
+  background: #FFF0E6;
+  border-radius: 5px;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main div.content div.cards-container div.card h3 {
+  padding: 20px;
+  background: #9E8AF6;
+  color: #FFF0E6;
+  border-radius: 5px 5px 0 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+body main div.content div.cards-container div.card > div {
+  padding: 20px;
+}
+body main div.content div.cards-container div.card > div p {
+  margin: 0 0 15px;
+}
+body main div.content div.cards-container div.card > div a {
+  color: #333;
+}
+body main div.content div.cards-container div.card > div img {
+  width: 100%;
+}
+body main div.content div.cards-container div.card:first-child {
+  margin: 0 15px 0 0;
+}
+body main div.content div.cards-container div.card:last-child {
+  margin: 0 0 0 15px;
+}
+body main div.content div.pin-container {
+  display: flex;
+  margin: 50px 0 50px;
+}
+body main div.content div.pin-container div.pin {
+  border: 4px solid #9E8AF6;
+  background: #FFF0E6;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 25%;
+}
+body main div.content div.pin-container div.pin img.face {
+  max-width: 110px;
+  margin: -45px 0px 0;
+}
+body main div.content div.pin-container div.pin span.name {
+  font-weight: 600;
+  text-align: right;
+}
+body main div.content div.pin-container div.pin:first-child {
+  margin: 0 15px 0 0;
+}
+body main div.content div.pin-container div.pin:last-child {
+  margin: 0 0 0 15px;
+}
+body main div.content div.slot-container {
+  display: flex;
+  margin: 50px 0 50px;
+}
+body main div.content div.slot-container div.slot {
+  border: 4px solid #9E8AF6;
+  background: #FFF0E6;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  width: 33%;
+}
+body main div.content div.slot-container div.slot h4 {
+  font-size: 22px;
+  line-height: 26px;
+  margin: 0 0 15px;
+}
+body main div.content div.slot-container div.slot img {
+  max-width: 250px;
+  margin: 0 0 15px;
+}
+body main div.content div.slot-container div.slot:first-child {
+  margin: 0 15px 0 0;
+}
+body main div.content div.slot-container div.slot:last-child {
+  margin: 0 0 0 15px;
+}
+body main div.content div.contact {
+  margin: 0 0 100px;
+}
+body main div.content div.contact ul {
+  display: flex;
+  margin: 40px 0 0;
+  padding: 0;
+}
+body main div.content div.contact ul li {
+  list-style: none;
+  width: 29.5%;
+  margin: 0 35px;
+}
+body main div.content div.contact ul li a {
+  width: 100%;
+  text-align: center;
+}
+body main div.content div.contact ul li:first-child {
+  margin: 0 35px 0 0;
+}
+body main div.content div.contact ul li:last-child {
+  margin: 0 0 0 35px;
+}
+body.dark {
+  background: #41463D;
+}
+body.dark h1,
+body.dark h2 {
+  color: #FFF0E6;
+}
+body.dark main div.content div.hero p {
+  color: #FFF0E6;
+}
