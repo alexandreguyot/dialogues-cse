@@ -8,7 +8,7 @@
         </div>
         <div class="cards-container">
             <div class="card">
-                <h3>Une identité visuelle qui vous ressemble</h3>
+                <h3>Une identité visuelle qui vous ressemble<img src="img/chevron.svg"></h3>
                 <div>
                     <p>Offrez à votre CSE une identité visuelle distinctive, permettant une identification rapide et aisée par vos collègues. Cette identité …</p>
                     <a href="{{ route('identite')}}">En savoir plus</a>
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="card">
-                <h3>Communiquer au quotidien</h3>
+                <h3>Communiquer au quotidien<img src="img/chevron.svg"></h3>
                 <div>
                     <p>Chez Dialogues, nous croyons en l'importance de cultiver un lien quotidien et fort avec vos salariés. Nous proposons…</p>
                     <a href="{{ route('communiquer')}}">En savoir plus</a>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="card">
-                <h3>Vous aider lors des réunions CSE</h3>
+                <h3>Vous aider lors des réunions CSE<img src="img/chevron.svg"></h3>
                 <div>
                     <p>Les réunions CSE sont des moments cruciaux nécessitant une préparation minutieuse et un suivi rigoureux…</p>
                     <a href="{{ route('reunions')}}">En savoir plus</a>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="card">
-                <h3>Un site web qui parle pour vous</h3>
+                <h3>Un site web qui parle pour vous<img src="img/chevron.svg"></h3>
                 <div>
                     <p>Un site web bien conçu est essentiel pour une communication efficace. Laissez notre équipe vous guider…</p>
                     <a href="{{ route('site')}}">En savoir plus</a>
@@ -42,6 +42,7 @@
         </div>
         <div class="carousel testimonials">
             <h2>Ils ont dialogué avec nous</h2>
+            <ul class="nav_arrow"><li><img src="img/arrow_left.png"></li><li><img src="img/arrow_right.png"></li></ul>
             <div class="pin-container">
                 <div class="pin">
                     <img src="img/illustrations/katell.png" class="face">
@@ -67,6 +68,7 @@
         </div>
         <div class="carousel support">
             <h2>Nos engagements</h2>
+            <ul class="nav_arrow"><li><img src="img/arrow_left.png"></li><li><img src="img/arrow_right.png"></li></ul>
             <div class="slot-container">
                 <div class="slot">
                     <img src="img/illustrations/flash_info.png">
