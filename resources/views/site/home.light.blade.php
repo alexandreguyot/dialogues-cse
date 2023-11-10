@@ -8,17 +8,17 @@
         <div class="carousel support">
             <div class="slot-container">
                 <div class="slot">
-                    <img src="img/illustrations/charte_graphique_cse.png">
+                    <img src="img/illustrations/catalogue_&_rs.png">
                     <h4>Une identité visuelle clé en main</h4>
                     <p>Notre équipe d’experts vous propose de réaliser pour vous une charte graphique propre à votre CSE</p>
                 </div>
                 <div class="slot">
-                    <img src="img/illustrations/outils_de_com.png">
+                    <img src="img/illustrations/catalogue_&_rs.png">
                     <h4>Une communication à votre image</h4>
                     <p>Dialogues CSE vous permet de mettre en œuvre les outils de communication adaptés à votre stratégie et à votre public</p>
                 </div>
                 <div class="slot">
-                    <img src="img/illustrations/goodies.png">
+                    <img src="img/illustrations/catalogue_&_rs.png">
                     <h4>Des goodies qui vous rendront fiers de votre CSE</h4>
                     <p>Dialogues CSE vous propose de créer pour vous des goodies à votre image et éco-responsables</p>
                 </div>
