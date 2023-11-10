@@ -1,5 +1,8 @@
-/*body {
+body {
   margin: 0;
+}
+body * {
+  transition: all 0.5s;
 }
 body h1,
 body h2,
@@ -8,7 +11,7 @@ body h4,
 body h5,
 body p {
   margin: 0;
-} 
+}
 body h1,
 body h2,
 body h4 {
@@ -40,9 +43,37 @@ body .btn.purple {
   background: #9E8AF6;
   color: #FFF0E6;
 }
+body .btn.purple:hover {
+  background: #6b54d0;
+}
 body .btn.green {
   background: #1CF9B5;
   color: #41463D;
+}
+body .btn.green:hover {
+  background: #00d694;
+}
+body:before {
+  content: '';
+  width: 298px;
+  height: 405px;
+  background-image: url('../img/path_droite.png');
+  background-size: cover;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: -1;
+}
+body:after {
+  content: '';
+  width: 71px;
+  height: 415px;
+  background-image: url('../img/path_gauche.png');
+  background-size: cover;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: -1;
 }
 body main header {
   background: #41463D;
@@ -70,7 +101,7 @@ body main div.content div.hero p {
   margin: 0 0 20px;
 }
 body main div.content div.hero p {
-  font-size: 26px;
+  font-size: 24px;
 }
 body main div.content div.cards-container {
   display: flex;
@@ -79,10 +110,11 @@ body main div.content div.cards-container {
 body main div.content div.cards-container div.card {
   background: #FFF0E6;
   border-radius: 5px;
-  margin: 0 15px;
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.5s;
 }
 body main div.content div.cards-container div.card h3 {
   padding: 20px;
@@ -106,10 +138,13 @@ body main div.content div.cards-container div.card > div img {
   width: 100%;
 }
 body main div.content div.cards-container div.card:first-child {
-  margin: 0 15px 0 0;
+  margin: 0 10px 0 0;
 }
 body main div.content div.cards-container div.card:last-child {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 10px;
+}
+body main div.content div.cards-container div.card:hover {
+  transform: translate(0,-15px);
 }
 body main div.content div.pin-container {
   display: flex;
@@ -120,7 +155,7 @@ body main div.content div.pin-container div.pin {
   background: #FFF0E6;
   border-radius: 10px;
   padding: 20px;
-  margin: 0 15px;
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -136,21 +171,21 @@ body main div.content div.pin-container div.pin span.name {
   text-align: right;
 }
 body main div.content div.pin-container div.pin:first-child {
-  margin: 0 15px 0 0;
+  margin: 0 10px 0 0;
 }
 body main div.content div.pin-container div.pin:last-child {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 10px;
 }
 body main div.content div.slot-container {
   display: flex;
-  margin: 50px 0 50px;
+  margin: 0 0 50px;
 }
 body main div.content div.slot-container div.slot {
   border: 4px solid #9E8AF6;
   background: #FFF0E6;
   border-radius: 10px;
-  padding: 20px;
-  margin: 0 15px;
+  padding: 20px 20px 30px;
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -168,10 +203,10 @@ body main div.content div.slot-container div.slot img {
   margin: 0 0 15px;
 }
 body main div.content div.slot-container div.slot:first-child {
-  margin: 0 15px 0 0;
+  margin: 0 10px 0 0;
 }
 body main div.content div.slot-container div.slot:last-child {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 10px;
 }
 body main div.content div.contact {
   margin: 0 0 100px;
@@ -180,21 +215,22 @@ body main div.content div.contact ul {
   display: flex;
   margin: 40px 0 0;
   padding: 0;
+  width: 100%;
 }
 body main div.content div.contact ul li {
   list-style: none;
-  width: 29.5%;
-  margin: 0 35px;
+  width: 32%;
+  display: flex;
 }
 body main div.content div.contact ul li a {
   width: 100%;
   text-align: center;
 }
 body main div.content div.contact ul li:first-child {
-  margin: 0 35px 0 0;
+  margin: 0 2% 0 0;
 }
 body main div.content div.contact ul li:last-child {
-  margin: 0 0 0 35px;
+  margin: 0 0 0 2%;
 }
 body.dark {
   background: #41463D;
@@ -206,5 +242,143 @@ body.dark h2 {
 body.dark main div.content div.hero p {
   color: #FFF0E6;
 }
-*/
-
+body.light {
+  background: #FFF0E6;
+}
+body.light main header {
+  border-bottom: 2px solid #41463D;
+}
+body.light main div.content .hero {
+  width: 80%;
+}
+body.light main div.content div.slot-container {
+  justify-content: space-around;
+}
+body.light main div.content div.slot-container div.slot {
+  width: 27%;
+}
+@media (max-width: 1530px) {
+  body main div.content {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+  body main div.content div.hero {
+    width: 75%;
+  }
+}
+@media (max-width: 970px) {
+  body main div.content div.cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: -10px -10px 50px;
+  }
+  body main div.content div.cards-container div.card {
+    width: calc(30%);
+    margin: 10px;
+  }
+  body main div.content div.cards-container div.card:first-child,
+  body main div.content div.cards-container div.card:last-child {
+    margin: 10px;
+  }
+  body main div.content div.pin-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 30px 0 50px;
+  }
+  body main div.content div.pin-container div.pin {
+    width: calc(80%);
+    margin: 10px;
+  }
+  body main div.content div.pin-container div.pin:nth-child(n+2) {
+    display: none;
+  }
+  body main div.content div.slot-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 30px 0 50px;
+  }
+  body main div.content div.slot-container div.slot {
+    width: calc(80%);
+    margin: 10px;
+  }
+  body main div.content div.slot-container div.slot:nth-child(n+2) {
+    display: none;
+  }
+  body.light main div.content div.slot-container {
+    margin: 0 0 50px;
+  }
+  body.light main div.content div.slot-container div.slot {
+    width: 100%;
+    margin: 10px 0;
+  }
+  body.light main div.content div.slot-container div.slot:nth-child(n+2) {
+    display: block;
+  }
+}
+@media (max-width: 570px) {
+  body:before {
+    top: 73px;
+  }
+  body main header {
+    padding: 15px 20px;
+  }
+  body main header img {
+    width: 140px;
+  }
+  body main header .btn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+  body main div.content h2 {
+    margin: 20px 0 0;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  body main div.content div.hero {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  body main div.content div.hero h1 {
+    font-size: 55px;
+    line-height: 60px;
+  }
+  body main div.content div.hero a {
+    width: 100%;
+  }
+  body main div.content div.cards-container {
+    flex-direction: column;
+    margin: 0px;
+  }
+  body main div.content div.cards-container div.card {
+    width: 100%;
+    margin: 0 0 15px;
+    border-radius: 5px;
+  }
+  body main div.content div.cards-container div.card h3 {
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  body main div.content div.cards-container div.card div {
+    display: none;
+  }
+  body main div.content div.cards-container div.card:first-child,
+  body main div.content div.cards-container div.card:last-child {
+    margin: 0 0 15px;
+  }
+  body main div.content div.contact {
+    margin: 0 0 50px;
+  }
+  body main div.content div.contact ul {
+    flex-direction: column;
+  }
+  body main div.content div.contact ul li {
+    width: 100%;
+  }
+  body main div.content div.contact ul li:first-child {
+    margin: 0 0 2% 0;
+  }
+  body main div.content div.contact ul li:last-child {
+    margin: 2% 0 0 0;
+  }
+}
