@@ -8,4 +8,6 @@ class HomeController
     {
         return view('admin.home');
     }
+
+
 }
