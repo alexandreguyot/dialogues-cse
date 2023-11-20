@@ -31,6 +31,9 @@ body h2 {
   font-size: 60px;
   line-height: 60px;
 }
+body ul.nav_arrow {
+  display: none;
+}
 body .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -115,6 +118,7 @@ body main div.content div.cards-container div.card {
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.5s;
+  width: 25%;
 }
 body main div.content div.cards-container div.card h3 {
   padding: 20px;
@@ -125,8 +129,15 @@ body main div.content div.cards-container div.card h3 {
   display: flex;
   align-items: center;
 }
+body main div.content div.cards-container div.card h3 img {
+  display: none;
+}
 body main div.content div.cards-container div.card > div {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 body main div.content div.cards-container div.card > div p {
   margin: 0 0 15px;
@@ -164,7 +175,9 @@ body main div.content div.pin-container div.pin {
 }
 body main div.content div.pin-container div.pin img.face {
   max-width: 110px;
-  margin: -45px 0px 0;
+  margin: -45px 0px 10px;
+  border-radius: 50%;
+  background-color: #FFF0E6;
 }
 body main div.content div.pin-container div.pin span.name {
   font-weight: 600;
@@ -178,7 +191,7 @@ body main div.content div.pin-container div.pin:last-child {
 }
 body main div.content div.slot-container {
   display: flex;
-  margin: 0 0 50px;
+  margin: 50px 0;
 }
 body main div.content div.slot-container div.slot {
   border: 4px solid #9E8AF6;
@@ -252,10 +265,16 @@ body.light main div.content .hero {
   width: 80%;
 }
 body.light main div.content div.slot-container {
-  justify-content: space-around;
+  margin: 0 0 50px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 body.light main div.content div.slot-container div.slot {
-  width: 27%;
+  width: calc(-47%);
+  margin: 0 0 50px;
+}
+body.light main div.content div.slot-container div.slot:nth-child(3n+2) {
+  margin: 0 40px 50px;
 }
 @media (max-width: 1530px) {
   body main div.content {
@@ -314,10 +333,30 @@ body.light main div.content div.slot-container div.slot {
   body.light main div.content div.slot-container div.slot:nth-child(n+2) {
     display: block;
   }
+  body.light main div.content div.slot-container div.slot:nth-child(3n+2) {
+    margin: 10px 0;
+  }
 }
 @media (max-width: 570px) {
   body:before {
     top: 73px;
+  }
+  body .btn {
+    text-align: center;
+  }
+  body ul.nav_arrow {
+    padding: 0;
+    margin: 10px 10px 0 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  body ul.nav_arrow li {
+    cursor: pointer;
+    padding: 0 15px 0 0;
+    list-style-type: none;
+  }
+  body ul.nav_arrow li img:hover {
+    opacity: 0.5;
   }
   body main header {
     padding: 15px 20px;
@@ -332,7 +371,7 @@ body.light main div.content div.slot-container div.slot {
   body main div.content h2 {
     margin: 20px 0 0;
     font-size: 40px;
-    line-height: 50px;
+    line-height: 42px;
   }
   body main div.content div.hero {
     width: 100%;
@@ -358,6 +397,12 @@ body.light main div.content div.slot-container div.slot {
   body main div.content div.cards-container div.card h3 {
     padding: 10px 20px;
     border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+  body main div.content div.cards-container div.card h3 img {
+    display: block;
   }
   body main div.content div.cards-container div.card div {
     display: none;
@@ -365,6 +410,22 @@ body.light main div.content div.slot-container div.slot {
   body main div.content div.cards-container div.card:first-child,
   body main div.content div.cards-container div.card:last-child {
     margin: 0 0 15px;
+  }
+  body main div.content div.cards-container div.card:hover {
+    transform: translate(0,0);
+  }
+  body main div.content div.pin-container {
+    margin: 20px 0 50px;
+  }
+  body main div.content div.pin-container div.pin {
+    align-items: flex-start;
+  }
+  body main div.content div.pin-container div.pin span {
+    text-align: right;
+    width: 100%;
+  }
+  body main div.content div.slot-container {
+    margin: 20px 0 50px;
   }
   body main div.content div.contact {
     margin: 0 0 50px;
