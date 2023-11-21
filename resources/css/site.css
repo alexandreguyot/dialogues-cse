@@ -79,7 +79,7 @@ body:before
 	content: '';
 	width: 298px;
 	height: 405px;
-	background-image: url(/images/path_droite.png?0c475d17c39fdb9b70e7c03909bf0d85);
+	background-image: url('../../public/img/path_droite.png');
 	background-size: cover;
 	position: absolute;
 	top: 100px;
@@ -92,7 +92,7 @@ body:after
 	content: '';
 	width: 71px;
 	height: 415px;
-	background-image: url(/images/path_gauche.png?7fa7cf179ccd75a75c06c310ff8fb24b);
+	background-image: url('../../public/img/path_gauche.png');
 	background-size: cover;
 	position: absolute;
 	top: 100px;
@@ -652,4 +652,3 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 		margin: 2% 0 0 0;
 	}
 }
-

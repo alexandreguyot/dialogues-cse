@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}" /> -->
     <link rel="stylesheet" href="{{ asset('css/site.css') }}" />
     <title>{{ __('panel.site_title') }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +22,7 @@
             </header>
             @yield('content')
         </main>
+        <script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
     </body>
 
 </html>
