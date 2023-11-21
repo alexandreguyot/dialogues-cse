@@ -5,7 +5,7 @@
             <h1>Une identité visuelle qui vous ressemble</h1>
             <p>Offrez à votre CSE une identité visuelle distinctive, permettant une identification rapide et aisée par vos collègues. Cette identité reflète vos valeurs et engagements uniques. Elle peut être originale et mémorable, laissant une empreinte marquante. Notre équipe est là pour vous accompagner dans cette démarche en vous proposant :</p>
         </div>
-        <div class="carousel support">
+        <div class="support">
             <div class="slot-container">
                 <div class="slot">
                     <img src="img/illustrations/bilan_de_fin_de_mandat.png">

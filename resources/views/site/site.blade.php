@@ -10,7 +10,7 @@
                 Laissez notre équipe vous guider dans la création et l'animation de votre site internet.
             </p>
         </div>
-        <div class="carousel support">
+        <div class="support">
             <div class="slot-container">
                 <div class="slot">
                     <img src="img/illustrations/bilan_de_fin_de_mandat.png">

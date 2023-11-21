@@ -8,8 +8,8 @@
         </div>
         <div class="cards-container">
             <div class="card">
+                <h3 class="accordion">Une identité visuelle qui vous ressemble<img src="img/chevron.svg"></h3>
                 <a href="{{ route('identite')}}" style="text-decoration:none">
-                    <h3>Une identité visuelle qui vous ressemble<img src="img/chevron.svg"></h3>
                     <div>
                         <p>Offrez à votre CSE une identité visuelle distinctive, permettant une identification rapide et aisée par vos collègues. Cette identité …</p>
                         <a href="{{ route('identite')}}">En savoir plus</a>
@@ -18,8 +18,8 @@
                 </a>
             </div>
             <div class="card">
+                <h3 class="accordion">Communiquer au quotidien<img src="img/chevron.svg"></h3>
                 <a href="{{ route('communiquer')}}" style="text-decoration:none">
-                    <h3>Communiquer au quotidien<img src="img/chevron.svg"></h3>
                     <div>
                         <p>Chez Dialogues, nous croyons en l'importance de cultiver un lien quotidien et fort avec vos salariés. Nous proposons…</p>
                         <a href="{{ route('communiquer')}}">En savoir plus</a>
@@ -28,8 +28,8 @@
                 </a>
             </div>
             <div class="card">
+                <h3 class="accordion">Vous aider lors des réunions CSE<img src="img/chevron.svg"></h3>
                 <a href="{{ route('reunions')}}" style="text-decoration:none">
-                    <h3>Vous aider lors des réunions CSE<img src="img/chevron.svg"></h3>
                     <div>
                         <p>Les réunions CSE sont des moments cruciaux nécessitant une préparation minutieuse et un suivi rigoureux…</p>
                         <a href="{{ route('reunions')}}">En savoir plus</a>
@@ -38,8 +38,8 @@
                 </a>
             </div>
             <div class="card">
+                <h3 class="accordion">Un site web qui parle pour vous<img src="img/chevron.svg"></h3>
                 <a href="{{ route('site')}}" style="text-decoration:none">
-                <h3>Un site web qui parle pour vous<img src="img/chevron.svg"></h3>
                 <div>
                     <p>Un site web bien conçu est essentiel pour une communication efficace. Laissez notre équipe vous guider…</p>
                     <a href="{{ route('site')}}">En savoir plus</a>

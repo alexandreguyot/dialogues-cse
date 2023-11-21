@@ -10,7 +10,7 @@
                 Notre équipe est là pour vous accompagner dans cette démarche en vous proposant :
             </p>
         </div>
-        <div class="carousel support">
+        <div class="support">
             <div class="slot-container">
                 <div class="slot">
                     <img src="img/illustrations/charte_graphique_cse.png">

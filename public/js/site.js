@@ -11241,6 +11241,7 @@ window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 $(function () {
   PinSlider.init();
   SlotSlider.init();
+  Accordion.init();
 });
 var PinSlider = {
   num_items: document.querySelectorAll(".pin").length,
@@ -11343,6 +11344,17 @@ var SlotSlider = {
     } else {
       arrowRight.removeClass('disabled');
       arrowLeft.removeClass('disabled');
+    }
+  }
+};
+var Accordion = {
+  acc: document.getElementsByClassName("accordion"),
+  init: function init() {
+    for (i = 0; i < this.acc.length; i++) {
+      this.acc[i].addEventListener("click", function () {
+        var div = $(this).next().next();
+        div.toggle();
+      });
     }
   }
 };

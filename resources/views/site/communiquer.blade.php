@@ -5,7 +5,7 @@
             <h1>Une identité visuelle qui vous ressemble</h1>
             <p>Chez Dialogues, nous croyons en l'importance de cultiver un lien quotidien fort avec vos salariés. Nous proposons les solutions suivantes :</p>
         </div>
-        <div class="carousel support">
+        <div class="support">
             <div class="slot-container">
                 <div class="slot">
                     <img src="img/illustrations/catalogue_&_rs.png">

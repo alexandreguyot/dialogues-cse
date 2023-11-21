@@ -4,6 +4,8 @@ window.$ = window.jQuery = require('jquery');
 $(function() {
     PinSlider.init();
     SlotSlider.init();
+
+    Accordion.init();
 });
 
 const PinSlider = {
@@ -111,6 +113,20 @@ const SlotSlider = {
         else {
             arrowRight.removeClass('disabled');
            arrowLeft.removeClass('disabled');
+        }
+    }
+};
+
+
+const Accordion = {
+    acc: document.getElementsByClassName("accordion"),
+
+    init: function () {
+        for (i = 0; i < this.acc.length; i++) {
+            this.acc[i].addEventListener("click", function() {
+                var div = $(this).next().next();
+                div.toggle();
+            });
         }
     }
 };

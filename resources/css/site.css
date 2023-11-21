@@ -443,14 +443,7 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 		margin: 10px;
 	}
 
-
-    body div.carousel.testimonials
-    {
-        overflow: hidden;
-    }
-
-    body div.carousel.support
-    {
+    body div.carousel {
         overflow: hidden;
     }
 
@@ -462,7 +455,7 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
         transition: transform 0.7s ease-in-out;
 	}
 
-	body main div.content div.pin-container div.pin
+	body main div.content div.carousel div.pin-container div.pin
 	{
 		width: calc(100% - 60px);
         flex-shrink: 0;
@@ -498,6 +491,7 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 	{
 		width: 100%;
 		margin: 10px 0;
+        flex-shrink: unset;
 	}
 
 	body.light main div.content div.slot-container div.slot:nth-child(n+2)
