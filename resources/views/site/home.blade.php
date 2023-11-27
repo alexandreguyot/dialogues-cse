@@ -13,7 +13,7 @@
                     <div>
                         <p>Offrez à votre CSE une identité visuelle distinctive, permettant une identification rapide et aisée par vos collègues. Cette identité …</p>
                         <a href="{{ route('identite')}}">En savoir plus</a>
-                        <img src="img/illustrations/identite_visuelle.png" alt="/identite_visuelle" />
+                        <img src="img/illustrations/identite_visuelle.png" alt="identite_visuelle" />
                     </div>
                 </a>
             </div>
@@ -23,7 +23,7 @@
                     <div>
                         <p>Chez Dialogues, nous croyons en l'importance de cultiver un lien quotidien et fort avec vos salariés. Nous proposons…</p>
                         <a href="{{ route('communiquer')}}">En savoir plus</a>
-                        <img src="img/illustrations/catalogue_&_rs.png" alt="/catalogue_&_rs" />
+                        <img src="img/illustrations/catalogue_&_rs.png" alt="catalogue_&_rs" />
                     </div>
                 </a>
             </div>
@@ -33,7 +33,7 @@
                     <div>
                         <p>Les réunions CSE sont des moments cruciaux nécessitant une préparation minutieuse et un suivi rigoureux…</p>
                         <a href="{{ route('reunions')}}">En savoir plus</a>
-                        <img src="img/illustrations/bilan_de_fin_de_mandat.png" alt="/catalogue_&_rs" />
+                        <img src="img/illustrations/outils_de_com.png" alt="outils_de_com" />
                     </div>
                 </a>
             </div>
@@ -43,7 +43,7 @@
                 <div>
                     <p>Un site web bien conçu est essentiel pour une communication efficace. Laissez notre équipe vous guider…</p>
                     <a href="{{ route('site')}}">En savoir plus</a>
-                    <img src="img/illustrations/bilan_de_fin_de_mandat.png" alt="/bilan_de_fin_de_mandat" />
+                    <img src="img/illustrations/bilan_de_fin_de_mandat.png" alt="bilan_de_fin_de_mandat" />
                 </div>
                 </a>
             </div>

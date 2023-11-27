@@ -17,6 +17,7 @@
                     <a href="{{ route('home')}}">
                         <img src="img/logo.svg">
                     </a>
+                    <span class="barre"> | </span><span class="text"> CSE</span>
                 </div>
                 <div class="nav"><a href="#" class="btn green">Demander un devis</a></div>
             </header>
