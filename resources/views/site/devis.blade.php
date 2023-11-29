@@ -30,6 +30,9 @@
                     <label for="societe">Entreprise</label>
                     <input type="text" name="societe" id="societe">
                 </div>
+                <div class="submit">
+                    <input type="submit" value="Envoyer le message" class="btn green">
+                </div>
             </div>
         </div>
         <div class="contact">

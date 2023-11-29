@@ -116,27 +116,6 @@ body main header img
 	width: 200px;
 }
 
-
-body main header .logo .barre
-{
-	font-size: 40px;
-    font-weight: 100;
-    color: #FFF0E6 !important;
-    text-decoration: none;
-    vertical-align: top;
-    margin-left: 10px;
-}
-
-body main header .logo .text
-{
-	font-size: 40px;
-    font-weight: 300;
-    color: #FFF0E6 !important;
-    text-decoration: none;
-    vertical-align: top;
-    line-height: 58.53px;
-}
-
 body main div.content
 {
 	max-width: 1470px;
@@ -357,17 +336,47 @@ body main div.content div.contact ul li:last-child
 	margin: 0 0 0 2%;
 }
 
-body main div.form {
-    display: block;
+body main div.content div.form {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0 0 50px;
+}
+body main div.content div.form div.form-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body main div.content div.form div.form-container > div {
+  width: 48%;
+  padding: 0 1% 1% 1%;
+}
+body main div.content div.form div.form-container > div.element {
+  flex-direction: column;
+  display: flex;
+}
+body main div.content div.form div.form-container > div.element label {
+  font-size: 18px;
+  padding: 0 0 8px;
+}
+body main div.content div.form div.form-container > div.element input {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+body main div.content div.form div.form-container > div.submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+body main div.content div.form div.form-container > div.submit input {
+  display: block;
+  height: 50px;
+  border: none;
+  font-size: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
 }
 
-body main div.form div.form-container {
-    display: block;
-}
-
-body main div.form div.form-container div.element {
-    display: block;
-}
 
 body.dark
 {
@@ -536,36 +545,22 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 	{
 		margin: 10px 0;
 	}
+	body main div.content div.form div.form-container > div {
+	  width: 100%;
+	  margin: 0 0 1%;
+	}
+	body main div.content div.form div.form-container > div.submit {
+	  margin: 20px 0 0;
+	}
+
 }
 
 @media (max-width: 570px)
 {
-    body:before
-    {
-        content: '';
-        width: 149px;
-        height: 202px;
-        background-image: url(/images/path_droite.png?0c475d17c39fdb9b70e7c03909bf0d85);
-        background-size: cover;
-        position: absolute;
-        top: 73px;
-        right: 0;
-        z-index: -1;
-    }
-
-    body:after
-    {
-        content: '';
-        width: 35px;
-        height: 208px;
-        background-image: url(/images/path_gauche.png?7fa7cf179ccd75a75c06c310ff8fb24b);
-        background-size: cover;
-        position: absolute;
-        top: 73px;
-        left: 0;
-        z-index: -1;
-    }
-
+	body:before
+	{
+		top: 73px;
+	}
 
 	body .btn
 	{
@@ -581,16 +576,6 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 	{
 		width: 140px;
 	}
-
-    body main header .logo .barre
-    {
-        display: none;
-    }
-
-    body main header .logo .text
-    {
-        display: none;
-    }
 
 	body main header .btn
 	{

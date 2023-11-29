@@ -336,6 +336,48 @@ body main div.content div.contact ul li:last-child
 	margin: 0 0 0 2%;
 }
 
+body main div.content div.form {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0 0 50px;
+}
+body main div.content div.form div.form-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body main div.content div.form div.form-container > div {
+  width: 48%;
+  padding: 0 1% 1% 1%;
+}
+body main div.content div.form div.form-container > div.element {
+  flex-direction: column;
+  display: flex;
+}
+body main div.content div.form div.form-container > div.element label {
+  font-size: 18px;
+  padding: 0 0 8px;
+}
+body main div.content div.form div.form-container > div.element input {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+body main div.content div.form div.form-container > div.submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+body main div.content div.form div.form-container > div.submit input {
+  display: block;
+  height: 50px;
+  border: none;
+  font-size: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+}
+
+
 body.dark
 {
 	background: #41463D;
@@ -503,6 +545,14 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 	{
 		margin: 10px 0;
 	}
+	body main div.content div.form div.form-container > div {
+	  width: 100%;
+	  margin: 0 0 1%;
+	}
+	body main div.content div.form div.form-container > div.submit {
+	  margin: 20px 0 0;
+	}
+
 }
 
 @media (max-width: 570px)
