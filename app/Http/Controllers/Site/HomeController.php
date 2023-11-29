@@ -26,4 +26,8 @@ class HomeController extends Controller
     public function reunions() {
         return view('site.reunions');
     }
+
+    public function devis() {
+        return view('site.devis');
+    }
 }

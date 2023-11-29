@@ -357,6 +357,18 @@ body main div.content div.contact ul li:last-child
 	margin: 0 0 0 2%;
 }
 
+body main div.form {
+    display: block;
+}
+
+body main div.form div.form-container {
+    display: block;
+}
+
+body main div.form div.form-container div.element {
+    display: block;
+}
+
 body.dark
 {
 	background: #41463D;

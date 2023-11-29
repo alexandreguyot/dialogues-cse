@@ -27,7 +27,7 @@
             <ul>
                 <li><a href="#" class="btn purple">Télécharger notre brochure</a></li>
                 <li><a href="#" class="btn purple">S'inscrire à notre newsletter</a></li>
-                <li><a href="#" class="btn green">Demander un devis</a></li>
+                <li><a href="{{ route('devis')}}" class="btn green">Demander un devis</a></li>
             </ul>
         </div>
     </div>

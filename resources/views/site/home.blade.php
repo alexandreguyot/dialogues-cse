@@ -4,7 +4,7 @@
         <div class="hero">
             <h1>Une solution unique pour votre CSE</h1>
             <p>Des solutions sur mesure pour une communication impactante</p>
-            <a href="#" class="btn green">Demander un devis</a>
+            <a href="{{ route('devis')}}" class="btn green">Demander un devis</a>
         </div>
         <div class="cards-container">
             <div class="card">
@@ -100,7 +100,7 @@
             <ul>
                 <li><a href="#" class="btn purple">Télécharger notre brochure</a></li>
                 <li><a href="#" class="btn purple">S'inscrire à notre newsletter</a></li>
-                <li><a href="#" class="btn green">Demander un devis</a></li>
+                <li><a href="{{ route('devis')}}" class="btn green">Demander un devis</a></li>
             </ul>
         </div>
     </div>
