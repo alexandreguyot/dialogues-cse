@@ -116,6 +116,27 @@ body main header img
 	width: 200px;
 }
 
+body main header .logo .barre
+{
+	font-size: 40px;
+    font-weight: 100;
+    color: #FFF0E6 !important;
+    text-decoration: none;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+body main header .logo .text
+{
+	font-size: 40px;
+    font-weight: 300;
+    color: #FFF0E6 !important;
+    text-decoration: none;
+    vertical-align: top;
+    line-height: 58.53px;
+}
+
+
 body main div.content
 {
 	max-width: 1470px;
@@ -363,6 +384,13 @@ body main div.content div.form div.form-container > div.element input {
   border: 1px solid #999;
   border-radius: 5px;
 }
+body main div.content div.form div.form-container > div.element textarea {
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #999;
+    border-radius: 5px;
+  }
+
 body main div.content div.form div.form-container > div.submit {
   display: flex;
   flex-wrap: wrap;
@@ -552,7 +580,6 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 	body main div.content div.form div.form-container > div.submit {
 	  margin: 20px 0 0;
 	}
-
 }
 
 @media (max-width: 570px)
@@ -582,6 +609,16 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 		font-size: 14px;
 		padding: 8px 15px;
 	}
+
+    body main header .logo .barre
+    {
+        display: none;
+    }
+
+    body main header .logo .text
+    {
+        display: none;
+    }
 
 	body main div.content h2
 	{

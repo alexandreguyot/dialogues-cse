@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Mail\Contact;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -29,5 +31,13 @@ class HomeController extends Controller
 
     public function devis() {
         return view('site.devis');
+    }
+
+    public function sendEmail(Request $request) {
+        Mail::to('maxence_defrance@hotmail.fr')->queue(new Contact($request->except('_token')));
+
+        toastr()->success('Mail envoyé, je vous recontacterai !', 'Envoyé !');
+
+        return view('site.home');
     }
 }

@@ -8,33 +8,39 @@
                 Laissez notre équipe vous guider dans la création et l'animation de votre site internet.
             </p>
         </div>
-        <div class="form">
-            <div class="form-container">
-                <div class="element">
-                    <label for="lastname">Nom</label>
-                    <input type="text" name="lastname" id="lastname">
-                </div>
-                <div class="element">
-                    <label for="firsname">Prénom</label>
-                    <input type="text" name="firsname" id="firsname">
-                </div>
-                <div class="element">
-                    <label for="email">Adresse e-mail</label>
-                    <input type="mail" name="email" id="email">
-                </div>
-                <div class="element">
-                    <label for="tel">Téléphone</label>
-                    <input type="tel" name="tel" id="tel">
-                </div>
-                <div class="element">
-                    <label for="societe">Entreprise</label>
-                    <input type="text" name="societe" id="societe">
-                </div>
-                <div class="submit">
-                    <input type="submit" value="Envoyer le message" class="btn green">
+        <form action="{{ route('sendEmail')}}" method="POST">
+            <div class="form">
+                <div class="form-container">
+                        <div class="element">
+                            <label for="lastname">Nom</label>
+                            <input type="text" name="lastname" id="lastname">
+                        </div>
+                        <div class="element">
+                            <label for="firsname">Prénom</label>
+                            <input type="text" name="firsname" id="firsname">
+                        </div>
+                        <div class="element">
+                            <label for="email">Adresse e-mail</label>
+                            <input type="mail" name="email" id="email">
+                        </div>
+                        <div class="element">
+                            <label for="tel">Téléphone</label>
+                            <input type="tel" name="tel" id="tel">
+                        </div>
+                        <div class="element">
+                            <label for="societe">Entreprise</label>
+                            <input type="text" name="societe" id="societe">
+                        </div>
+                        <div class="element">
+                            <label for="message">Message</label>
+                            <textarea type="textarea" name="message" id="message"></textarea>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Envoyer la demande" class="btn green">
+                        </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="contact">
             <h2>On garde contact ? 🤙</h2>
             <ul>
