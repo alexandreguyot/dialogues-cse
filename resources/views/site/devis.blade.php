@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    {!! NoCaptcha::renderJs('fr', true, 'recaptchaCallback') !!}
     <div class="content">
         <div class="hero">
             <h1>Besoin d'un devis ou d'un renseignement(s)</h1>

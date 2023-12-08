@@ -24,6 +24,7 @@
             @yield('content')
         </main>
         <script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
+        {!! NoCaptcha::renderJs() !!}
     </body>
 
 </html>
