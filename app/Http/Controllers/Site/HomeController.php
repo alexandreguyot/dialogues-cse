@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Mail\Contact;
 use Illuminate\Support\Facades\Mail;
+use Validator;
 
 class HomeController extends Controller
 {
@@ -34,6 +35,14 @@ class HomeController extends Controller
     }
 
     public function sendEmail(Request $request) {
+        $validate = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+
+        if($validate->fails()){
+            return redirect()->back()->withErrors($validate);
+        }
+
         Mail::to('maxence_defrance@hotmail.fr')->queue(new Contact($request->except('_token')));
 
         toastr()->success('Mail envoyé, je vous recontacterai !', 'Envoyé !');

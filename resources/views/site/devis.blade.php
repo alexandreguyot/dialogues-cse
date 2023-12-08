@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    {!! NoCaptcha::renderJs('fr', true, 'recaptchaCallback') !!}
     <div class="content">
         <div class="hero">
             <h1>Besoin d'un devis ou d'un renseignement(s)</h1>
@@ -35,6 +36,12 @@
                             <label for="message">Message</label>
                             <textarea type="textarea" name="message" id="message"></textarea>
                         </div>
+                        {!! NoCaptcha::display() !!}
+                        @if ($errors->has('g-recaptcha-response'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                            </span>
+                        @endif
                         <div class="submit">
                             <input type="submit" value="Envoyer la demande" class="btn green">
                         </div>
