@@ -2,11 +2,7 @@
 @section('content')
     <div class="content">
         <div class="hero">
-            <h1>Besoin d'un devis ou d'un renseignement(s)</h1>
-            <p>
-                Un site web bien conçu est essentiel pour une communication efficace.
-                Laissez notre équipe vous guider dans la création et l'animation de votre site internet.
-            </p>
+            <h1>Besoin d'un renseignement ?</h1>
         </div>
         <form action="{{ route('sendEmail')}}" method="POST">
             <div class="form">
