@@ -2,7 +2,7 @@
 @section('content')
     <div class="content">
         <div class="hero">
-            <h1>Une identité visuelle qui vous ressemble</h1>
+            <h1>Communiquer au quotidien</h1>
             <p>Chez Dialogues, nous croyons en l'importance de cultiver un lien quotidien fort avec vos salariés. Nous proposons les solutions suivantes :</p>
         </div>
         <div class="support">
@@ -12,7 +12,7 @@
                     <p>Créer pour vous un livret de présentation du CSE, de ses actions et ses activités et d’animer vos réseaux sociaux</p>
                 </div>
                 <div class="slot">
-                    <img src="img/illustrations/flash.png">
+                    <img src="img/illustrations/flash_infos.png">
                     <p>Réaliser un flash info ou une newsletter régulière</p>
                 </div>
                 <div class="slot">

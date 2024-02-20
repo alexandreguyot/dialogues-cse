@@ -2,7 +2,7 @@
 @section('content')
     <div class="content">
         <div class="hero">
-            <h1>Une identité visuelle qui vous ressemble</h1>
+            <h1>Vous aider lors des réunions CSE</h1>
             <p>Offrez à votre CSE une identité visuelle distinctive, permettant une identification rapide et aisée par vos collègues. Cette identité reflète vos valeurs et engagements uniques. Elle peut être originale et mémorable, laissant une empreinte marquante. Notre équipe est là pour vous accompagner dans cette démarche en vous proposant :</p>
         </div>
         <div class="support">

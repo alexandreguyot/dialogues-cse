@@ -2,7 +2,7 @@
 @section('content')
     <div class="content">
         <div class="hero">
-            <h1>Une identité visuelle qui vous ressemble</h1>
+            <h1>Un site web qui parle pour vous</h1>
             <p>
                 Un site web bien conçu est essentiel pour une communication efficace.
                 </br>

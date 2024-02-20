@@ -8,12 +8,8 @@
             <div class="form">
                 <div class="form-container">
                         <div class="element">
-                            <label for="lastname">Nom</label>
+                            <label for="lastname">Nom et Prénom</label>
                             <input type="text" name="lastname" id="lastname">
-                        </div>
-                        <div class="element">
-                            <label for="firsname">Prénom</label>
-                            <input type="text" name="firsname" id="firsname">
                         </div>
                         <div class="element">
                             <label for="email">Adresse e-mail</label>
@@ -28,8 +24,12 @@
                             <input type="text" name="societe" id="societe">
                         </div>
                         <div class="element">
-                            <label for="message">Message</label>
-                            <textarea type="textarea" name="message" id="message"></textarea>
+                            <label for="date">À quelle date pouvons nous vous joindre ?</label>
+                            <input type="date" name="date" id="date">
+                        </div>
+                        <div class="element">
+                            <label for="message">Indiquez-nous en quelques lignes votre projet</label>
+                            <textarea type="textarea" name="message" id="message" rows="6"></textarea>
                         </div>
                         {!! NoCaptcha::display() !!}
                         @if ($errors->has('g-recaptcha-response'))
