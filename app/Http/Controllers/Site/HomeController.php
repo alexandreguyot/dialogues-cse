@@ -43,7 +43,7 @@ class HomeController extends Controller
             return redirect()->back()->withErrors($validate);
         }
 
-        Mail::to('maxence_defrance@hotmail.fr')->queue(new Contact($request->except('_token')));
+        Mail::to('bonjourdialogues@gmail.fr')->queue(new Contact($request->except('_token')));
 
         toastr()->success('Mail envoyé, je vous recontacterai !', 'Envoyé !');
 
