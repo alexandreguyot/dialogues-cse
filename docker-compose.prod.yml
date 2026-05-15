@@ -1,0 +1,89 @@
+# Production stack for Dialogues CSE on the OVH VPS.
+
+name: dialogues-cse
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: dialogues-cse-app:latest
+    container_name: dialogues-cse-app
+    restart: unless-stopped
+    env_file: .env.production
+    command: ["php-fpm", "-F", "-R"]
+    networks:
+      - internal
+      - db
+    volumes:
+      - storage:/var/www/html/storage
+    mem_limit: 512m
+    mem_reservation: 256m
+    healthcheck:
+      test: ["CMD-SHELL", "php-fpm -t 2>&1 | grep -q 'successful'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.web
+    image: dialogues-cse-web:latest
+    container_name: dialogues-cse-web
+    restart: unless-stopped
+    depends_on:
+      - app
+    networks:
+      - internal
+      - proxy
+    mem_limit: 128m
+    mem_reservation: 32m
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.dialogues-cse-web.rule=Host(`${APP_HOST}`)"
+      - "traefik.http.routers.dialogues-cse-web.entrypoints=websecure"
+      - "traefik.http.routers.dialogues-cse-web.tls=true"
+      - "traefik.http.routers.dialogues-cse-web.tls.certresolver=letsencrypt"
+      - "traefik.http.services.dialogues-cse-web.loadbalancer.server.port=80"
+
+  queue:
+    image: dialogues-cse-app:latest
+    container_name: dialogues-cse-queue
+    restart: unless-stopped
+    env_file: .env.production
+    command: ["php", "artisan", "queue:work", "--tries=3", "--sleep=2", "--timeout=120", "--max-time=3600"]
+    networks:
+      - internal
+      - db
+    volumes:
+      - storage:/var/www/html/storage
+    mem_limit: 256m
+    mem_reservation: 64m
+
+  scheduler:
+    image: dialogues-cse-app:latest
+    container_name: dialogues-cse-scheduler
+    restart: unless-stopped
+    env_file: .env.production
+    command: ["sh", "-c", "while true; do php artisan schedule:run --no-interaction --verbose; sleep 60; done"]
+    networks:
+      - internal
+      - db
+    volumes:
+      - storage:/var/www/html/storage
+    mem_limit: 128m
+    mem_reservation: 32m
+
+networks:
+  internal:
+    driver: bridge
+  proxy:
+    external: true
+  db:
+    external: true
+
+volumes:
+  storage:
+    name: dialogues-cse_storage

@@ -1,0 +1,16 @@
+# ============================================================
+# Nginx image — serves Laravel public/ and fastcgi to the app container.
+# Built AFTER the app image so we can pluck the built public/ tree from it.
+# ============================================================
+FROM livepoll-app:latest AS source
+
+FROM nginx:1.27-alpine
+
+# Pull in the public/ tree (Vite-built assets + Laravel entry point)
+COPY --from=source /var/www/html/public /var/www/html/public
+
+# Drop in our vhost
+COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# nginx user already exists in this image; root is for the master process
+EXPOSE 80
