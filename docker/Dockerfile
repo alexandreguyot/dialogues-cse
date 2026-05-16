@@ -30,6 +30,13 @@ RUN apk add --no-cache \
         bcmath exif gd intl mbstring opcache pcntl pdo_mysql zip \
     && rm -rf /var/cache/apk/*
 
+# phpredis (PECL) — for CACHE_DRIVER=redis / SESSION_DRIVER=redis backed by the shared Redis on the `db` network
+RUN apk add --no-cache --virtual .redis-build-deps autoconf gcc g++ make linux-headers \
+    && pecl install redis \
+    && docker-php-ext-enable redis \
+    && apk del .redis-build-deps \
+    && rm -rf /tmp/pear
+
 ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
