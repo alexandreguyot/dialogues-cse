@@ -2,7 +2,7 @@
 # Nginx image — serves Laravel public/ and fastcgi to the app container.
 # Built AFTER the app image so we can pluck the built public/ tree from it.
 # ============================================================
-FROM livepoll-app:latest AS source
+FROM dialogues-cse-app:latest AS source
 
 FROM nginx:1.27-alpine
 
