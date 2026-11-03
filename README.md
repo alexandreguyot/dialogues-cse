@@ -28,7 +28,7 @@ If you have file/photo fields, run php artisan storage:link command.
 
 ## Déploiement en production
 
-Le serveur OVH (`51.255.193.209`, user `ubuntu`) héberge plusieurs projets Laravel sous Docker derrière Traefik. Procédure synthétique ci-dessous ; voir le README de [LivePoll](https://github.com/alexandreguyot/livepoll#d%C3%A9ploiement-en-production) pour les détails (bootstrap d'un nouveau projet, etc.).
+Le serveur OVH (`51.255.193.209`, user `ubuntu`) héberge plusieurs projets Laravel sous Docker derrière Traefik. Les enregistrements DNS `dialogues-cse.fr`, `www` et `manager` doivent pointer vers lui ; l'ancien site reste sur le mutualisé OVH (`cluster031`, `~/www/dialogues-cse`) tant qu'ils n'ont pas été basculés. Procédure synthétique ci-dessous ; voir le README de [LivePoll](https://github.com/alexandreguyot/livepoll#d%C3%A9ploiement-en-production) pour les détails (bootstrap d'un nouveau projet, etc.).
 
 ### 1. Rapide — depuis ton laptop
 
