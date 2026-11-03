@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Support\TwoFactor;
 use Closure;
 use Illuminate\Support\Facades\Gate;
 
@@ -13,7 +14,8 @@ class AuthGates
     {
         $user = auth()->user();
 
-        if (! $user) {
+        // Sans code validé, aucun droit : y compris sur les requêtes Livewire, hors des routes de l'admin.
+        if (! $user || ! TwoFactor::satisfied($user)) {
             return $next($request);
         }
 

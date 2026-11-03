@@ -17,6 +17,27 @@
                     <hr class="mt-6 border-b-1 border-blueGray-300">
 
                     @livewire('update-password-form')
+
+                    <hr class="mt-6 border-b-1 border-blueGray-300">
+
+                    <h2 class="profile-section-title">Authenticator</h2>
+                    @if(auth()->user()->hasTwoFactor())
+                        <p class="status is-online">Activé</p>
+                        @unless(auth()->user()->is_admin)
+                            <form class="mt-4" method="POST" action="{{ route('two-factor.disable') }}">
+                                @csrf
+                                @method('DELETE')
+                                <div class="form-group {{ $errors->has('code') ? 'invalid' : '' }}">
+                                    <label class="form-label" for="two-factor-code">Code à 6 chiffres</label>
+                                    <input class="form-control" id="two-factor-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" required>
+                                    <div class="validation-message">{{ $errors->first('code') }}</div>
+                                </div>
+                                <button class="btn btn-rose mt-3">Désactiver</button>
+                            </form>
+                        @endunless
+                    @else
+                        <a class="btn btn-indigo" href="{{ route('two-factor.setup') }}">Activer l'authenticator</a>
+                    @endif
             </div>
         </div>
     </div>

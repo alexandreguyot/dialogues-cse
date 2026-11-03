@@ -22,6 +22,14 @@ class User extends Authenticatable implements HasLocalePreference
     protected $hidden = [
         'remember_token',
         'password',
+        'two_factor_secret',
+        'two_factor_recovery_codes',
+    ];
+
+    protected $casts = [
+        'two_factor_secret'         => 'encrypted',
+        'two_factor_recovery_codes' => 'encrypted:array',
+        'two_factor_confirmed_at'   => 'datetime',
     ];
 
     protected $fillable = [
@@ -54,6 +62,11 @@ class User extends Authenticatable implements HasLocalePreference
         'roles.title',
         'locale',
     ];
+
+    public function hasTwoFactor(): bool
+    {
+        return filled($this->two_factor_secret) && filled($this->two_factor_confirmed_at);
+    }
 
     public function getIsAdminAttribute()
     {
