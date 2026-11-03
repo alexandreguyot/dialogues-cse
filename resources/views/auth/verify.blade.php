@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
 <section class="relative w-full h-full py-40 min-h-screen">
