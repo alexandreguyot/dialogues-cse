@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Permission;
+namespace App\Livewire\Permission;
 
 use App\Models\Permission;
 use Livewire\Component;

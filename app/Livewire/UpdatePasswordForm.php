@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Hash;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -36,7 +36,7 @@ class UpdatePasswordForm extends Component
 
         $this->resetState();
 
-        $this->emit('saved');
+        $this->dispatch('saved');
     }
 
     public function render()

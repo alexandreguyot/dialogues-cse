@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Role;
+namespace App\Livewire\Role;
 
 use App\Models\Permission;
 use App\Models\Role;
 use Livewire\Component;
 
-class Edit extends Component
+class Create extends Component
 {
     public Role $role;
 
@@ -16,14 +16,13 @@ class Edit extends Component
 
     public function mount(Role $role)
     {
-        $this->role        = $role;
-        $this->permissions = $this->role->permissions()->pluck('id')->toArray();
+        $this->role = $role;
         $this->initListsForFields();
     }
 
     public function render()
     {
-        return view('livewire.role.edit');
+        return view('livewire.role.create');
     }
 
     public function submit()

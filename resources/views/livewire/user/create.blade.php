@@ -1,8 +1,8 @@
-<form wire:submit.prevent="submit" class="pt-3">
+<form wire:submit="submit" class="pt-3">
 
     <div class="form-group {{ $errors->has('user.name') ? 'invalid' : '' }}">
         <label class="form-label required" for="name">{{ trans('cruds.user.fields.name') }}</label>
-        <input class="form-control" type="text" name="name" id="name" required wire:model.defer="user.name">
+        <input class="form-control" type="text" name="name" id="name" required wire:model="user.name">
         <div class="validation-message">
             {{ $errors->first('user.name') }}
         </div>
@@ -12,7 +12,7 @@
     </div>
     <div class="form-group {{ $errors->has('user.email') ? 'invalid' : '' }}">
         <label class="form-label required" for="email">{{ trans('cruds.user.fields.email') }}</label>
-        <input class="form-control" type="email" name="email" id="email" required wire:model.defer="user.email">
+        <input class="form-control" type="email" name="email" id="email" required wire:model="user.email">
         <div class="validation-message">
             {{ $errors->first('user.email') }}
         </div>
@@ -22,7 +22,7 @@
     </div>
     <div class="form-group {{ $errors->has('user.password') ? 'invalid' : '' }}">
         <label class="form-label required" for="password">{{ trans('cruds.user.fields.password') }}</label>
-        <input class="form-control" type="password" name="password" id="password" required wire:model.defer="password">
+        <input class="form-control" type="password" name="password" id="password" required wire:model="password">
         <div class="validation-message">
             {{ $errors->first('user.password') }}
         </div>
@@ -42,7 +42,7 @@
     </div>
     <div class="form-group {{ $errors->has('user.locale') ? 'invalid' : '' }}">
         <label class="form-label" for="locale">{{ trans('cruds.user.fields.locale') }}</label>
-        <input class="form-control" type="text" name="locale" id="locale" wire:model.defer="user.locale">
+        <input class="form-control" type="text" name="locale" id="locale" wire:model="user.locale">
         <div class="validation-message">
             {{ $errors->first('user.locale') }}
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Exports\ModelExport;
 use Illuminate\Database\Eloquent\Model;

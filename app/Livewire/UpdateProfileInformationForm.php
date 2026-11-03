@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
@@ -31,7 +31,7 @@ class UpdateProfileInformationForm extends Component
 
         auth()->user()->update($validatedData['state']);
 
-        $this->emit('saved');
+        $this->dispatch('saved');
     }
 
     public function render()

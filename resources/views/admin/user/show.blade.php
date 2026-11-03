@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="row">
-    <div class="card bg-blueGray-100">
+    <div class="card">
         <div class="card-header">
             <div class="card-header-container">
                 <h6 class="card-title">
@@ -39,8 +39,6 @@
                             </th>
                             <td>
                                 <a class="link-light-blue" href="mailto:{{ $user->email }}">
-                                    <i class="far fa-envelope fa-fw">
-                                    </i>
                                     {{ $user->email }}
                                 </a>
                             </td>

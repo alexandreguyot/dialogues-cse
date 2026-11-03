@@ -1,8 +1,8 @@
-<form wire:submit.prevent="submit" class="pt-3">
+<form wire:submit="submit" class="pt-3">
 
     <div class="form-group {{ $errors->has('permission.title') ? 'invalid' : '' }}">
         <label class="form-label required" for="title">{{ trans('cruds.permission.fields.title') }}</label>
-        <input class="form-control" type="text" name="title" id="title" required wire:model.defer="permission.title">
+        <input class="form-control" type="text" name="title" id="title" required wire:model="permission.title">
         <div class="validation-message">
             {{ $errors->first('permission.title') }}
         </div>

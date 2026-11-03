@@ -1,20 +1,20 @@
 <div>
     <div class="card-controls sm:flex">
         <div class="w-full sm:w-1/2">
-            Per page:
-            <select wire:model="perPage" class="form-select w-full sm:w-1/6">
+            Par page :
+            <select wire:model.live="perPage" class="form-select w-full sm:w-1/6">
                 @foreach($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
             </select>
 
             @can('role_delete')
-                <button class="btn btn-rose ml-3 disabled:opacity-50 disabled:cursor-not-allowed" type="button" wire:click="confirm('deleteSelected')" wire:loading.attr="disabled" {{ $this->selectedCount ? '' : 'disabled' }}>
-                    {{ __('Delete Selected') }}
+                <button class="btn btn-rose ml-3 disabled:opacity-50 disabled:cursor-not-allowed" type="button" wire:click="deleteSelected" wire:confirm="{{ trans('global.areYouSure') }}" wire:loading.attr="disabled" {{ $this->selectedCount ? '' : 'disabled' }}>
+                    {{ 'Supprimer la sélection' }}
                 </button>
             @endcan
 
-            @if(file_exists(app_path('Http/Livewire/ExcelExport.php')))
+            @if(file_exists(app_path('Livewire/ExcelExport.php')))
                 <livewire:excel-export model="Role" format="csv" />
                 <livewire:excel-export model="Role" format="xlsx" />
                 <livewire:excel-export model="Role" format="pdf" />
@@ -25,12 +25,12 @@
 
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
-            Search:
-            <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
+            Recherche :
+            <input type="text" wire:model.live.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
     <div wire:loading.delay>
-        Loading...
+        Chargement…
     </div>
 
     <div class="overflow-hidden">
@@ -59,7 +59,7 @@
                     @forelse($roles as $role)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $role->id }}" wire:model="selected">
+                                <input type="checkbox" value="{{ $role->id }}" wire:model.live="selected">
                             </td>
                             <td>
                                 {{ $role->id }}
@@ -85,7 +85,7 @@
                                         </a>
                                     @endcan
                                     @can('role_delete')
-                                        <button class="btn btn-sm btn-rose mr-2" type="button" wire:click="confirm('delete', {{ $role->id }})" wire:loading.attr="disabled">
+                                        <button class="btn btn-sm btn-rose mr-2" type="button" wire:click="delete({{ $role->id }})" wire:confirm="{{ trans('global.areYouSure') }}" wire:loading.attr="disabled">
                                             {{ trans('global.delete') }}
                                         </button>
                                     @endcan
@@ -94,7 +94,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="10">No entries found.</td>
+                            <td colspan="10">Aucun résultat.</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -109,21 +109,10 @@
                     <span class="font-medium">
                         {{ $this->selectedCount }}
                     </span>
-                    {{ __('Entries selected') }}
+                    {{ 'sélectionné(s)' }}
                 </p>
             @endif
             {{ $roles->links() }}
         </div>
     </div>
 </div>
-
-@push('scripts')
-    <script>
-        Livewire.on('confirm', e => {
-    if (!confirm("{{ trans('global.areYouSure') }}")) {
-        return
-    }
-@this[e.callback](...e.argv)
-})
-    </script>
-@endpush
