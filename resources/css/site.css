@@ -733,3 +733,221 @@ body.light main div.content div.slot-container div.slot:nth-child(3n+2)
 		margin: 2% 0 0 0;
 	}
 }
+
+/* Pages créées depuis l'admin */
+
+body main div.flash
+{
+	background: #1CF9B5;
+	color: #41463D;
+	font-family: 'Space Grotesk', sans-serif;
+	font-weight: 500;
+	padding: 12px 30px;
+	text-align: center;
+}
+
+body main header .nav
+{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px 25px;
+}
+
+body main header .nav .nav-link
+{
+	color: #FFF0E6;
+	font-size: 18px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+body main header .nav .nav-link:hover
+{
+	color: #1CF9B5;
+}
+
+body main div.content div.support:not(.carousel) > h2,body main div.content div.testimonials:not(.carousel) > h2
+{
+	margin: 0 0 50px;
+}
+
+body main div.content div.text-block
+{
+	display: flex;
+	align-items: center;
+	gap: 50px;
+	margin: 0 0 50px;
+}
+
+body main div.content div.text-block-content
+{
+	flex: 1;
+}
+
+body main div.content div.text-block h2
+{
+	margin: 0 0 20px;
+}
+
+body main div.content div.text-block p
+{
+	font-size: 20px;
+	line-height: 1.4;
+}
+
+body main div.content div.text-block img
+{
+	width: 35%;
+	max-width: 450px;
+}
+
+body.dark main div.content div.text-block p
+{
+	color: #FFF0E6;
+}
+
+body main div.content div.pin-container.stacked
+{
+	flex-wrap: wrap;
+}
+
+body main div.content div.slot-container div.slot svg.slot-icon
+{
+	width: 96px;
+	height: 96px;
+	margin: 10px 0 25px;
+	color: #6b54d0;
+}
+
+body main div.content div.features
+{
+	margin: 0 0 50px;
+}
+
+body main div.content div.features > h2
+{
+	margin: 0 0 40px;
+}
+
+body main div.content div.features-grid
+{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px 50px;
+}
+
+body main div.content div.feature svg
+{
+	display: block;
+	width: 44px;
+	height: 44px;
+	margin: 0 0 15px;
+	color: #6b54d0;
+}
+
+body main div.content div.feature h4
+{
+	font-size: 26px;
+	line-height: 30px;
+	margin: 0 0 8px;
+}
+
+body main div.content div.feature p
+{
+	font-size: 18px;
+	line-height: 1.4;
+}
+
+body.dark main div.content div.feature svg
+{
+	color: #1CF9B5;
+}
+
+body.dark main div.content div.feature h4,body.dark main div.content div.feature p
+{
+	color: #FFF0E6;
+}
+
+body.dark main div.content div.slot-container.stacked
+{
+	margin: 0 0 50px;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+body.dark main div.content div.slot-container.stacked div.slot
+{
+	width: calc(33% - 80px);
+	margin: 0 0 50px;
+}
+
+body.dark main div.content div.slot-container.stacked div.slot:nth-child(3n+2)
+{
+	margin: 0 40px 50px;
+}
+
+@media (max-width: 970px)
+{
+	body main div.content div.features-grid
+	{
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+	}
+
+	body main div.content div.pin-container.stacked
+	{
+		margin: 30px 0 50px;
+	}
+
+	body main div.content div.pin-container.stacked div.pin
+	{
+		box-sizing: border-box;
+		width: 100%;
+		margin: 40px 0 0;
+	}
+
+	body main div.content div.slot-container.stacked,body.dark main div.content div.slot-container.stacked
+	{
+		flex-wrap: wrap;
+	}
+
+	body main div.content div.slot-container.stacked div.slot,
+	body.dark main div.content div.slot-container.stacked div.slot,
+	body.dark main div.content div.slot-container.stacked div.slot:nth-child(3n+2)
+	{
+		box-sizing: border-box;
+		width: 100%;
+		margin: 10px 0;
+	}
+
+	body main div.content div.text-block
+	{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	body main div.content div.text-block img
+	{
+		width: 100%;
+	}
+}
+
+@media (max-width: 570px)
+{
+	body main header .nav .nav-link
+	{
+		font-size: 14px;
+	}
+
+	body main div.flash
+	{
+		padding: 10px 20px;
+	}
+
+	body main div.content div.features-grid
+	{
+		grid-template-columns: 1fr;
+	}
+}

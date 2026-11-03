@@ -87,7 +87,7 @@ return [
     'password'             => 'Le mot de passe est incorrect',
     'present'              => ':attribute champ doit être présent.',
     'regex'                => ':attribute n\'est pas au bon format',
-    'required'             => ':attribute champ est requis.',
+    'required'             => 'Le champ :attribute est obligatoire.',
     'required_if'          => ':attribute champ est requis lorsque :other est :value.',
     'required_unless'      => ':attribute champ est requis à moins que :other est dans :values.',
     'required_with'        => ':attribute champ est requis lorsque :values est présent.',

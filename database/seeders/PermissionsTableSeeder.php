@@ -78,6 +78,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 17,
                 'title' => 'user_access',
             ],
+            [
+                'id'    => 18,
+                'title' => 'page_access',
+            ],
+            [
+                'id'    => 19,
+                'title' => 'page_create',
+            ],
+            [
+                'id'    => 20,
+                'title' => 'page_edit',
+            ],
+            [
+                'id'    => 21,
+                'title' => 'page_show',
+            ],
+            [
+                'id'    => 22,
+                'title' => 'page_delete',
+            ],
         ];
 
         Permission::insert($permissions);
