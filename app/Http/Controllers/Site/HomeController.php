@@ -49,7 +49,9 @@ class HomeController extends Controller
             return redirect()->back()->withErrors($validate)->withInput();
         }
 
-        Mail::to('bonjourdialogues@gmail.fr')->queue(new Contact($validate->safe()->except('g-recaptcha-response')));
+        foreach (['bonjourdialogues@gmail.fr', 'a.pro.guyot@gmail.com'] as $recipient) {
+            Mail::to($recipient)->queue(new Contact($validate->safe()->except('g-recaptcha-response')));
+        }
 
         return redirect()->route('home')->with('status', 'Mail envoyé, je vous recontacterai !');
     }

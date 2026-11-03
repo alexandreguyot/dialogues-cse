@@ -43,6 +43,9 @@ class SiteTest extends TestCase
 
             return str_contains($html, 'Jeanne Martin') && str_contains($html, '0102030405');
         });
+        Mail::assertQueued(Contact::class, 2);
+        Mail::assertQueued(Contact::class, fn (Contact $mail) => $mail->hasTo('bonjourdialogues@gmail.fr'));
+        Mail::assertQueued(Contact::class, fn (Contact $mail) => $mail->hasTo('a.pro.guyot@gmail.com'));
     }
 
     public function test_quote_form_validates_input(): void
