@@ -36,17 +36,21 @@ class HomeController extends Controller
 
     public function sendEmail(Request $request) {
         $validate = Validator::make($request->all(), [
+            'lastname'             => 'required|string|max:255',
+            'email'                => 'required|email|max:255',
+            'tel'                  => 'nullable|string|max:50',
+            'societe'              => 'nullable|string|max:255',
+            'date'                 => 'nullable|date',
+            'message'              => 'required|string|max:5000',
             'g-recaptcha-response' => 'required|captcha'
         ]);
 
         if($validate->fails()){
-            return redirect()->back()->withErrors($validate);
+            return redirect()->back()->withErrors($validate)->withInput();
         }
 
-        Mail::to('bonjourdialogues@gmail.fr')->queue(new Contact($request->except('_token')));
+        Mail::to('bonjourdialogues@gmail.fr')->queue(new Contact($validate->safe()->except('g-recaptcha-response')));
 
-        toastr()->success('Mail envoyé, je vous recontacterai !', 'Envoyé !');
-
-        return view('site.home');
+        return redirect()->route('home')->with('status', 'Mail envoyé, je vous recontacterai !');
     }
 }

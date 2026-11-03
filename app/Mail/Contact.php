@@ -49,7 +49,7 @@ class Contact extends Mailable
     public function content()
     {
         return new Content(
-            view: 'site.mail.contact'
+            view: 'mail.contact'
         );
     }
 }
