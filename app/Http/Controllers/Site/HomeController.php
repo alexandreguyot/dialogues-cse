@@ -49,7 +49,7 @@ class HomeController extends Controller
             return redirect()->back()->withErrors($validate)->withInput();
         }
 
-        foreach (['bonjourdialogues@gmail.fr', 'a.pro.guyot@gmail.com'] as $recipient) {
+        foreach (['bonjourdialogues@gmail.com', 'a.pro.guyot@gmail.com'] as $recipient) {
             Mail::to($recipient)->queue(new Contact($validate->safe()->except('g-recaptcha-response')));
         }
 
