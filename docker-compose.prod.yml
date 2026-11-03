@@ -47,6 +47,12 @@ services:
       - "traefik.http.routers.dialogues-cse-web.tls=true"
       - "traefik.http.routers.dialogues-cse-web.tls.certresolver=letsencrypt"
       - "traefik.http.services.dialogues-cse-web.loadbalancer.server.port=80"
+      # Routeur séparé : un certificat manager.* en échec ne doit pas bloquer celui du domaine principal.
+      - "traefik.http.routers.dialogues-cse-manager.rule=Host(`${APP_SUBDOMAIN_URL:-manager}.${APP_HOST}`)"
+      - "traefik.http.routers.dialogues-cse-manager.entrypoints=websecure"
+      - "traefik.http.routers.dialogues-cse-manager.tls=true"
+      - "traefik.http.routers.dialogues-cse-manager.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.dialogues-cse-manager.service=dialogues-cse-web"
 
   queue:
     image: dialogues-cse-app:latest

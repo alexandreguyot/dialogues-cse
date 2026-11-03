@@ -1,10 +1,27 @@
-## How to install 
+## Créer des pages depuis l'admin
+
+Menu **Pages** de l'admin (`manager.<domaine>/admin/pages`). Une page est une suite de blocs qui reprennent le design du site : introduction, texte et image, encadrés illustrés, points clés avec icônes, cartes, témoignages, « On garde contact ? ». Le contenu est du texte brut : aucun HTML n'est interprété.
+
+- Le bouton **Aperçu** montre la page sans l'enregistrer, sur ordinateur et sur mobile. Une page reste un brouillon tant que « En ligne » n'est pas activé.
+- Donner le rôle `User` à un compte client : il gère les pages sans accéder aux comptes ni aux droits.
+- Le catalogue des blocs est dans `app/Support/PageBlocks.php`, leur rendu dans `resources/views/site/blocks/`.
+- Les images envoyées vont sur le disque `public`, sous `pages/`, et sont servies par la route `/media/pages/{fichier}`.
+
+### Icônes
+
+`resources/icones/` est une copie de la bibliothèque [icones](https://github.com/alexandreguyot/icones), sans les icônes de basket. Pour la mettre à jour :
+
+```bash
+php artisan icones:sync ../icones
+```
+
+## How to install
 
 Run cp .env.example .env file to copy example file to .env
 Then edit your .env file with DB credentials and other settings.
 Run composer install command
 Run php artisan migrate --seed command.
-Run npm install
+Run npm install, then npm run prod (public/css and public/js are committed)
 Notice: seed is important, because it will create the first admin user for you.
 Run php artisan key:generate command.
 If you have file/photo fields, run php artisan storage:link command.

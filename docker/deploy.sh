@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =====================================================================
-# LivePoll deploy script — runs on the VPS as the `deploy` user.
+# Dialogues CSE deploy script — runs on the VPS as the `deploy` user.
 #
 #   ./docker/deploy.sh             # pull, build, up, migrate
 #   ./docker/deploy.sh --no-build  # skip image rebuild (env-only restart)
@@ -51,7 +51,7 @@ step "Starting stack (app, web, reverb, queue, scheduler)"
 
 step "Waiting for app container to be healthy"
 for i in {1..30}; do
-    status=$(docker inspect -f '{{.State.Health.Status}}' livepoll-app 2>/dev/null || echo "starting")
+    status=$(docker inspect -f '{{.State.Health.Status}}' dialogues-cse-app 2>/dev/null || echo "starting")
     [[ "$status" == "healthy" ]] && break
     sleep 2
 done

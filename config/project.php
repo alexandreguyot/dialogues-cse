@@ -1,6 +1,8 @@
 <?php
 
 return [
+    // "*" derrière Traefik, pour que Laravel génère des URLs en https.
+    'trusted_proxies'           => env('TRUSTED_PROXIES'),
     'date_format'               => 'd/m/Y',
     'time_format'               => 'H:i:s',
     'datetime_format'           => 'd/m/Y H:i:s',
