@@ -2,20 +2,13 @@ const plugin = require("tailwindcss/plugin")
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: {
-    enabled: false,
-    content: ['./resources/views/**/*.blade.php', './safelist.txt'],
-    options: {
-      safelist: []
-    }
-  },
+  content: ['./resources/views/**/*.blade.php'],
   theme: {
     extend: {
       colors: {
         indigo: colors.indigo,
         rose: colors.rose,
-        blueGray: colors.blueGray,
+        blueGray: colors.slate,
         lightBlue: colors.sky,
         orange: colors.orange,
         red: colors.red,
@@ -79,20 +72,6 @@ module.exports = {
       }
     }
   },
-  variants: [
-    'responsive',
-    'group-hover',
-    'focus-within',
-    'first',
-    'last',
-    'odd',
-    'even',
-    'hover',
-    'focus',
-    'active',
-    'visited',
-    'disabled'
-  ],
   plugins: [
     require('@tailwindcss/forms'),
     plugin(function ({ addComponents, theme }) {

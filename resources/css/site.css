@@ -79,7 +79,7 @@ body:before
 	content: '';
 	width: 298px;
 	height: 405px;
-	background-image: url('../../public/img/path_droite.png');
+	background-image: url('/img/path_droite.png');
 	background-size: cover;
 	position: absolute;
 	top: 100px;
@@ -92,7 +92,7 @@ body:after
 	content: '';
 	width: 71px;
 	height: 415px;
-	background-image: url('../../public/img/path_gauche.png');
+	background-image: url('/img/path_gauche.png');
 	background-size: cover;
 	position: absolute;
 	top: 100px;

@@ -29,7 +29,7 @@
     }
 
     $(buttonsId + ' .select-all-button').click(function (e) {
-        el.val(_.map(el.find('option'), opt => $(opt).attr('value')))
+        el.val(el.find('option').map((i, opt) => $(opt).attr('value')).get())
         el.trigger('change.select2')
         syncLivewire()
     })

@@ -1,5 +1,8 @@
-const jqueryTransition = require('./jquery.transition');
-window.$ = window.jQuery = require('jquery');
+import $ from 'jquery';
+import 'jquery.transit';
+import '../css/site.css';
+
+window.$ = window.jQuery = $;
 
 $(function() {
     PinSlider.init();

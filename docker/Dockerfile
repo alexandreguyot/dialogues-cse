@@ -17,8 +17,8 @@ RUN composer install \
 # ============================================================
 # Stage 2 — PHP-FPM runtime
 # ============================================================
-# No node-build stage: dialogues-cse's webpack-mix outputs (public/css, public/js,
-# public/mix-manifest.json) are committed to the repo.
+# No node-build stage: dialogues-cse's Vite outputs (public/css, public/js)
+# are committed to the repo.
 FROM php:8.4-fpm-alpine AS runtime
 
 RUN apk add --no-cache \
