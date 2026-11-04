@@ -40,7 +40,10 @@ class HomeController extends Controller
             ->map(fn ($name) => route($name))
             ->merge(Page::published()->pluck('slug')->map(fn ($slug) => route('pages.show', $slug)));
 
-        return response()->view('site.sitemap', ['urls' => $urls])->header('Content-Type', 'application/xml');
+        // Hors du template : avec short_open_tag, Blade prendrait cette ligne pour du PHP.
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . view('site.sitemap', ['urls' => $urls])->render();
+
+        return response($xml)->header('Content-Type', 'application/xml');
     }
 
     public function sendEmail(Request $request) {
