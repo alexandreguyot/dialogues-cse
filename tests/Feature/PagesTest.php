@@ -326,7 +326,7 @@ class PagesTest extends TestCase
     {
         $this->page(['title' => 'Page récente']);
 
-        $this->actingAs($this->enrolledAdmin())->withSession(['two_factor_passed_for' => 1])->get('/admin')->assertOk()->assertSee('Page récente')->assertSee('1 page en ligne');
+        $this->actingAs($this->enrolledAdmin())->withSession(['two_factor_passed_for' => 1])->get('/admin')->assertOk()->assertSee('Page récente')->assertSee('3 pages en ligne');
     }
 
     public function test_draft_preview_is_reserved_to_admins(): void

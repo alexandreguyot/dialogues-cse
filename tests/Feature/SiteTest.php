@@ -71,6 +71,26 @@ class SiteTest extends TestCase
         $this->assertNotFalse(simplexml_load_string($response->getContent()));
     }
 
+    public function test_legal_pages_are_linked_and_terms_stay_draft_until_completed(): void
+    {
+        $home = $this->get('/')->assertOk();
+
+        $home->assertSee(route('pages.show', 'mentions-legales'), false);
+        $home->assertSee(route('pages.show', 'politique-de-confidentialite'), false);
+        $home->assertDontSee(route('pages.show', 'conditions-generales'), false);
+
+        $this->get('/mentions-legales')->assertOk()->assertSee('106 669 393')->assertSee('OVH SAS');
+        $this->get('/politique-de-confidentialite')->assertOk()->assertSee('reCAPTCHA');
+        $this->get('/conditions-generales')->assertNotFound();
+
+        foreach (['mentions-legales', 'politique-de-confidentialite'] as $slug) {
+            $this->assertStringNotContainsString('À COMPLÉTER', $this->get('/' . $slug)->getContent());
+        }
+
+        Page::where('slug', 'conditions-generales')->update(['is_published' => true]);
+        $this->get('/')->assertSee(route('pages.show', 'conditions-generales'), false);
+    }
+
     public function test_quote_form_has_csrf_token(): void
     {
         $this->get('/demander-un-devis')->assertSee('name="_token"', false);

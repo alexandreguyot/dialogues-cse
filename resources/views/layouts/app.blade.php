@@ -44,6 +44,12 @@
             <div class="flash">{{ session('status') }}</div>
         @endif
         @yield('content')
+        {{-- Styles en ligne : le CSS est mis en cache 30 jours sous un nom fixe. --}}
+        <footer style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;padding:30px 20px;font-size:14px">
+            @foreach($legalPages as $legalPage)
+                <a href="{{ route('pages.show', $legalPage->slug) }}" style="color:{{ ($theme ?? 'light') === 'dark' ? '#FFF0E6' : '#41463D' }}">{{ $legalPage->title }}</a>
+            @endforeach
+        </footer>
     </main>
     <script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
     @stack('scripts')

@@ -12,6 +12,8 @@ class Page extends Model
 
     public const SLUG_PATTERN = '[a-z0-9]+(?:-[a-z0-9]+)*';
 
+    public const LEGAL_SLUGS = ['mentions-legales', 'politique-de-confidentialite', 'conditions-generales'];
+
     // Dossiers de public/ : nginx et Apache les serviraient à la place de la page.
     private const RESERVED_SLUGS = ['css', 'js', 'img', 'images', 'pdf', 'storage', 'media', 'vendor'];
 

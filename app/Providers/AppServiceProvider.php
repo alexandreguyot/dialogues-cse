@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('layouts.app', function ($view) {
             $view->with('menuPages', Page::published()->where('in_menu', true)->orderBy('id')->get(['title', 'slug']));
+            $view->with('legalPages', Page::published()->whereIn('slug', Page::LEGAL_SLUGS)->orderBy('id')->get(['title', 'slug']));
         });
     }
 }
