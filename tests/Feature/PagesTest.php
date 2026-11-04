@@ -72,7 +72,7 @@ class PagesTest extends TestCase
         $this->page();
         $this->page(['slug' => 'brouillon', 'is_published' => false]);
 
-        $this->get('/ma-page')->assertOk()->assertSee('Titre de test')->assertSee('<title>Ma page</title>', false);
+        $this->get('/ma-page')->assertOk()->assertSee('Titre de test')->assertSee('<title>Ma page | Dialogues CSE</title>', false);
         $this->get('/brouillon')->assertNotFound();
     }
 

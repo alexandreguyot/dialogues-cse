@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Création de site internet pour CSE | Dialogues CSE')
+@section('description', 'Dialogues CSE crée un site internet adapté à vos besoins et à votre public, puis vous aide à l\'animer et à produire son contenu.')
 @section('content')
     <div class="content">
         <div class="hero">
@@ -13,11 +15,11 @@
         <div class="support">
             <div class="slot-container">
                 <div class="slot">
-                    <img src="img/illustrations/bilan_de_fin_de_mandat.png">
+                    <img src="img/illustrations/bilan_de_fin_de_mandat.png" alt="Illustration de la création d'un site internet">
                     <p>Création d’un site internet adapté à vos besoins et à votre public</p>
                 </div>
                 <div class="slot">
-                    <img src="img/illustrations/flash_info.png">
+                    <img src="img/illustrations/flash_info.png" alt="Illustration de l'animation d'un site internet">
                     <p>Animation du site et création de contenu</p>
                 </div>
             </div>

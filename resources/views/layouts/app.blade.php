@@ -8,7 +8,16 @@
     <title>@yield('title', __('panel.site_title'))</title>
     @if(filled(trim($__env->yieldContent('description'))))
         <meta name="description" content="@yield('description')" />
+        <meta property="og:description" content="@yield('description')" />
     @endif
+    <link rel="canonical" href="{{ url()->current() }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Dialogues CSE" />
+    <meta property="og:title" content="@yield('title', __('panel.site_title'))" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:image" content="{{ url('img/illustrations/outils_de_com.png') }}" />
+    <meta name="twitter:card" content="summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">

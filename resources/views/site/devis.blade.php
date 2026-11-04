@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Demander un devis | Dialogues CSE')
+@section('description', 'Décrivez votre projet en quelques lignes : Dialogues CSE vous recontacte pour vous proposer une solution adaptée à votre CSE.')
 @section('content')
     <div class="content">
         <div class="hero">

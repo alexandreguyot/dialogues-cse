@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://dialogues-cse.fr/sitemap.xml

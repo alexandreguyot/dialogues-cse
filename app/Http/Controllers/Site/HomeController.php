@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Mail\Contact;
+use App\Models\Page;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 
@@ -32,6 +33,14 @@ class HomeController extends Controller
 
     public function devis() {
         return view('site.devis');
+    }
+
+    public function sitemap() {
+        $urls = collect(['home', 'identite', 'communiquer', 'reunions', 'site', 'devis'])
+            ->map(fn ($name) => route($name))
+            ->merge(Page::published()->pluck('slug')->map(fn ($slug) => route('pages.show', $slug)));
+
+        return response()->view('site.sitemap', ['urls' => $urls])->header('Content-Type', 'application/xml');
     }
 
     public function sendEmail(Request $request) {

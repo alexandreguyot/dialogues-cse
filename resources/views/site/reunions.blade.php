@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Préparation des réunions CSE | Dialogues CSE')
+@section('description', 'Dialogues CSE vous aide à préparer vos réunions, à suivre les points à l\'ordre du jour et à communiquer autour de chaque réunion.')
 @section('content')
     <div class="content">
         <div class="hero">
@@ -8,15 +10,15 @@
         <div class="support">
             <div class="slot-container">
                 <div class="slot">
-                    <img src="img/illustrations/bilan_de_fin_de_mandat.png">
+                    <img src="img/illustrations/bilan_de_fin_de_mandat.png" alt="Illustration de la préparation d'une réunion">
                     <p>Préparer les réunions et assurer le suivi des points à l’ordre du jour</p>
                 </div>
                 <div class="slot">
-                    <img src="img/illustrations/crayon_girl.png">
+                    <img src="img/illustrations/crayon_girl.png" alt="Illustration de la préparation d'une réunion">
                     <p>Préparer les réunions et assurer le suivi des points à l’ordre du jour</p>
                 </div>
                 <div class="slot">
-                    <img src="img/illustrations/flash_info.png">
+                    <img src="img/illustrations/flash_info.png" alt="Illustration d'une action de communication">
                     <p>Préparer les actions de communication autour de la réunion</p>
                 </div>
             </div>

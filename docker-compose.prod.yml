@@ -52,12 +52,19 @@ services:
       - "traefik.http.routers.dialogues-cse-www.tls=true"
       - "traefik.http.routers.dialogues-cse-www.tls.certresolver=letsencrypt"
       - "traefik.http.routers.dialogues-cse-www.service=dialogues-cse-web"
+      - "traefik.http.routers.dialogues-cse-www.middlewares=dialogues-cse-www-redirect"
+      - "traefik.http.middlewares.dialogues-cse-www-redirect.redirectregex.regex=^https://www\\.(.*)"
+      - "traefik.http.middlewares.dialogues-cse-www-redirect.redirectregex.replacement=https://$${1}"
+      - "traefik.http.middlewares.dialogues-cse-www-redirect.redirectregex.permanent=true"
       # Routeur séparé : un certificat manager.* en échec ne doit pas bloquer celui du domaine principal.
       - "traefik.http.routers.dialogues-cse-manager.rule=Host(`${APP_SUBDOMAIN_URL:-manager}.${APP_HOST}`)"
       - "traefik.http.routers.dialogues-cse-manager.entrypoints=websecure"
       - "traefik.http.routers.dialogues-cse-manager.tls=true"
       - "traefik.http.routers.dialogues-cse-manager.tls.certresolver=letsencrypt"
       - "traefik.http.routers.dialogues-cse-manager.service=dialogues-cse-web"
+      # L'admin répond aussi aux URL du site : sans cela, Google pourrait indexer ce doublon.
+      - "traefik.http.routers.dialogues-cse-manager.middlewares=dialogues-cse-noindex"
+      - "traefik.http.middlewares.dialogues-cse-noindex.headers.customresponseheaders.X-Robots-Tag=noindex, nofollow"
 
   queue:
     image: dialogues-cse-app:latest

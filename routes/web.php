@@ -11,4 +11,6 @@ Route::get('/vous-aider-lors-des-reunions-CSE', [HomeController::class, 'reunion
 Route::get('/un-site-web-qui-parle-pour-vous', [HomeController::class, 'site'])->name('site');
 Route::get('/demander-un-devis', [HomeController::class, 'devis'])->name('devis');
 
+Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('sitemap');
+
 Route::post('/envoyer-demander-devis', [HomeController::class, 'sendEmail'])->name('sendEmail');

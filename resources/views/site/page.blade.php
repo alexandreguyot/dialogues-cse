@@ -1,5 +1,5 @@
 @extends('layouts.app', ['theme' => $page->theme])
-@section('title', $page->title)
+@section('title', $page->title . ' | Dialogues CSE')
 @section('description', $page->meta_description ?? '')
 @section('content')
     @isset($preview)

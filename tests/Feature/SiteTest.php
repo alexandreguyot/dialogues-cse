@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Mail\Contact;
+use App\Models\Page;
 use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
@@ -12,11 +13,62 @@ class SiteTest extends TestCase
 {
     use RefreshDatabase;
 
+    private const PUBLIC_URLS = ['/', '/une-identite-visuelle-qui-vous-ressemble', '/communiquer-au-quotidien', '/vous-aider-lors-des-reunions-CSE', '/un-site-web-qui-parle-pour-vous', '/demander-un-devis'];
+
     public function test_public_pages_render(): void
     {
-        foreach (['/', '/une-identite-visuelle-qui-vous-ressemble', '/communiquer-au-quotidien', '/vous-aider-lors-des-reunions-CSE', '/un-site-web-qui-parle-pour-vous', '/demander-un-devis'] as $url) {
+        foreach (self::PUBLIC_URLS as $url) {
             $this->get($url)->assertOk();
         }
+    }
+
+    public function test_public_pages_have_their_own_seo_tags(): void
+    {
+        $titles = [];
+
+        foreach (self::PUBLIC_URLS as $url) {
+            $html = $this->get($url)->assertOk()->getContent();
+
+            $this->assertMatchesRegularExpression('#<meta name="description" content="[^"]{50,160}"#', $html);
+            $this->assertStringContainsString('<link rel="canonical" href="' . url($url === '/' ? '' : $url) . '"', $html);
+            $this->assertMatchesRegularExpression('#<meta property="og:image" content="https?://#', $html);
+            $this->assertSame(1, preg_match_all('#<h1[ >]#', $html));
+
+            preg_match('#<title>(.*)</title>#', $html, $title);
+            $titles[] = $title[1];
+        }
+
+        $this->assertSame($titles, array_unique($titles));
+        $this->get('/')->assertSee('"@context":"https://schema.org","@type":"Organization"', false);
+    }
+
+    public function test_public_page_images_exist_and_have_alt(): void
+    {
+        foreach (self::PUBLIC_URLS as $url) {
+            preg_match_all('#<img [^>]*>#', $this->get($url)->getContent(), $images);
+
+            foreach ($images[0] as $image) {
+                $this->assertStringContainsString(' alt="', $image, $url);
+
+                preg_match('#src="([^"]+)"#', $image, $src);
+                $this->assertFileExists(public_path(ltrim(parse_url($src[1], PHP_URL_PATH), '/')), $url);
+            }
+        }
+    }
+
+    public function test_sitemap_lists_public_pages_but_not_drafts(): void
+    {
+        Page::create(['title' => 'Publiée', 'slug' => 'page-publiee', 'is_published' => true, 'blocks' => []]);
+        Page::create(['title' => 'Brouillon', 'slug' => 'page-brouillon', 'is_published' => false, 'blocks' => []]);
+
+        $response = $this->get('/sitemap.xml')->assertOk()->assertHeader('Content-Type', 'application/xml');
+
+        foreach (self::PUBLIC_URLS as $url) {
+            $response->assertSee('<loc>' . url($url === '/' ? '' : $url) . '</loc>', false);
+        }
+
+        $response->assertSee('page-publiee')->assertDontSee('page-brouillon');
+        $this->assertNotFalse(simplexml_load_string($response->getContent()));
     }
 
     public function test_quote_form_has_csrf_token(): void
